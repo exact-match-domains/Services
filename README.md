@@ -2,4 +2,4 @@
 
 We provide SEO services that help you rank on search engines...
 
-Contact us for consultation!
+Contact us for a consultation!
