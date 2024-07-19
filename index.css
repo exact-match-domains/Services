@@ -187,10 +187,11 @@ button {
         flex: 1 1 45%;
     }
 
+    /* 
     ul.foot>li {
         flex: 1 1 45%;
     }
-
+ */
     button,
     .shop {
         font-size: large;
@@ -206,10 +207,11 @@ button {
         flex: 1 1 100%;
     }
 
+    /* 
     ul.foot>li {
         flex: 1 1 100%;
     }
-
+ */
     button,
     .shop {
         font-size: medium;
