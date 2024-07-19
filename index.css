@@ -74,7 +74,7 @@ ul.foot a {
 
 ul.foot>li {
     flex: 1 1 auto;
-    margin: 0 0.5em;
+    margin: 0 auto;
 }
 
 li {
