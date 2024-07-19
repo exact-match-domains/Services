@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-size: 100%;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
     background-color: palevioletred;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
     text-align: center;
     padding: 0 0.5em;
     text-shadow: 0px 0px 2px darkmagenta;
@@ -42,28 +42,29 @@ ul.horizontal {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    flex-direction: row;
 }
 
 ul.horizontal>li {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    flex: 1;
+    display: flex;
+    flex: 1 1 20%;
+    padding: 0.5em;
+    box-sizing: border-box;
 }
 
-
 ul.horizontal>li img {
-    width: 20vw;
-    max-height: 20vh;
+    width: 100%;
+    height: auto;
 }
 
 ul.foot {
     margin-top: 1em !important;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    display: initial;
+    justify-content: center;
 }
 
 ul.foot a {
@@ -71,7 +72,7 @@ ul.foot a {
 }
 
 ul.foot>li {
-    flex: unset;
+    flex: 1 1 auto;
     margin: 0 0.5em;
 }
 
@@ -147,11 +148,13 @@ button,
 }
 
 img {
-    height: 50vh;
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
 }
 
 p {
-    max-width: 50vw;
+    max-width: 100%;
     margin: 0 0 1em 0;
     padding: 0;
 }
@@ -173,4 +176,42 @@ input {
 button {
     margin-top: 5px;
     border-radius: initial;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: large;
+    }
+
+    ul.horizontal>li {
+        flex: 1 1 45%;
+    }
+
+    ul.foot>li {
+        flex: 1 1 45%;
+    }
+
+    button,
+    .shop {
+        font-size: large;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: medium;
+    }
+
+    ul.horizontal>li {
+        flex: 1 1 100%;
+    }
+
+    ul.foot>li {
+        flex: 1 1 100%;
+    }
+
+    button,
+    .shop {
+        font-size: medium;
+    }
 }
