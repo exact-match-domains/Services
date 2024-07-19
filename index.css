@@ -191,6 +191,7 @@ button {
 
     ul.foot>li {
         flex: 1 1 45%;
+        margin: 0 auto;
     }
 
     button,
@@ -211,6 +212,7 @@ button {
 
     ul.foot>li {
         flex: 1 1 100%;
+        margin: 0 auto;
     }
 
     button,
