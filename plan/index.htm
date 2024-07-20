@@ -23,6 +23,40 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <style>
+        .shop {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updatePayPalLink() {
+            const select = document.getElementById("urlCount");
+            const value = select.value;
+
+            if (value === "contact") {
+                window.location.href = "mailto:quote@BestSEOLosAngeles.com?subject=Quote";
+                return;
+            }
+
+            const quantity = parseInt(value);
+            const amount = quantity * 49;
+            const formattedAmount = amount.toLocaleString('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            const paypalLink = document.getElementById("paypalLink");
+            paypalLink.href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@BestSEOLosAngeles.com&amount=49&currency_code=USD&item_name=SEO%20Strategy&quantity=${quantity}&cancel_return=http://BestSEOLosAngeles.com&no_note=0`;
+            paypalLink.textContent = `Pay $${formattedAmount}`;
+        }
+    </script>
 </head>
 
 <body>
@@ -50,7 +84,7 @@
         <li>
             <svg>
                 <use href="../images/check.svg#Layer_1"></use>
-            </svg> SERP Reports
+            </svg> SERP Analysis
         </li>
         <li>
             <svg>
@@ -68,12 +102,64 @@
             </svg> Recommendations
         </li>
     </ul>
-    <a class="shop"
-        href="https://www.paypal.com/cgi-bin/webscr?cmd=_cart&add=1&business=paypal@BestSEOLosAngeles.com&amount=49&currency_code=USD&item_name=SEO%20Strategy&cancel_return=http://BestSEOLosAngeles.com&no_note=0"
+    <label for="urlCount">Select number of URLs:</label>
+    <select id="urlCount" onchange="updatePayPalLink()">
+        <option value="1">1 URL</option>
+        <option value="2">2 URLs</option>
+        <option value="3">3 URLs</option>
+        <option value="4">4 URLs</option>
+        <option value="5">5 URLs</option>
+        <option value="6">6 URLs</option>
+        <option value="7">7 URLs</option>
+        <option value="8">8 URLs</option>
+        <option value="9">9 URLs</option>
+        <option value="10">10 URLs</option>
+        <option value="11">11 URLs</option>
+        <option value="12">12 URLs</option>
+        <option value="13">13 URLs</option>
+        <option value="14">14 URLs</option>
+        <option value="15">15 URLs</option>
+        <option value="16">16 URLs</option>
+        <option value="17">17 URLs</option>
+        <option value="18">18 URLs</option>
+        <option value="19">19 URLs</option>
+        <option value="20">20 URLs</option>
+        <option value="21">21 URLs</option>
+        <option value="22">22 URLs</option>
+        <option value="23">23 URLs</option>
+        <option value="24">24 URLs</option>
+        <option value="25">25 URLs</option>
+        <option value="26">26 URLs</option>
+        <option value="27">27 URLs</option>
+        <option value="28">28 URLs</option>
+        <option value="29">29 URLs</option>
+        <option value="30">30 URLs</option>
+        <option value="31">31 URLs</option>
+        <option value="32">32 URLs</option>
+        <option value="33">33 URLs</option>
+        <option value="34">34 URLs</option>
+        <option value="35">35 URLs</option>
+        <option value="36">36 URLs</option>
+        <option value="37">37 URLs</option>
+        <option value="38">38 URLs</option>
+        <option value="39">39 URLs</option>
+        <option value="40">40 URLs</option>
+        <option value="41">41 URLs</option>
+        <option value="42">42 URLs</option>
+        <option value="43">43 URLs</option>
+        <option value="44">44 URLs</option>
+        <option value="45">45 URLs</option>
+        <option value="46">46 URLs</option>
+        <option value="47">47 URLs</option>
+        <option value="48">48 URLs</option>
+        <option value="49">49 URLs</option>
+        <option value="50">50 URLs</option>
+        <option value="contact">Contact Us if you need more</option>
+    </select>
+    <a id="paypalLink" class="shop"
+        href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@BestSEOLosAngeles.com&amount=49&currency_code=USD&item_name=SEO%20Strategy&quantity=1&cancel_return=http://BestSEOLosAngeles.com&no_note=0"
         target="_blank">
-        49<svg>
-            <use href="../images/shop.svg#Layer_1"></use>
-        </svg>
+        Pay $49
     </a>
     <ul class="horizontal foot">
         <li>
