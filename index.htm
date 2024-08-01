@@ -457,14 +457,14 @@
     <form id="paypal-form" class="hidden-form" method="post" action="https://www.paypal.com/cgi-bin/webscr"></form>
     <script>
         const services = [
-            { category: "Design", name: "Design", description: "Create unique logos for your brand, including initial concepts and final designs.", pricePerUnit: 50, unitName: "hour", maxQuantity: 200, icon: "fas fa-paint-brush", frequency: "one-time" },
+            { category: "Design", name: "Design", description: "Create unique logos for your brand, including initial concepts and final designs.", pricePerUnit: 49, unitName: "hour", maxQuantity: 200, icon: "fas fa-paint-brush", frequency: "one-time" },
 
-            { category: "Development", name: "Development", description: "Build responsive and modern websites with custom features.", pricePerUnit: 100, unitName: "hour", maxQuantity: 100, icon: "fas fa-code", frequency: "one-time" },
+            { category: "Development", name: "Development", description: "Build responsive and modern websites with custom features.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-code", frequency: "one-time" },
 
             { category: "Marketing", name: "PPC Campaign Management", description: "Manage pay-per-click advertising campaigns on platforms like Google Ads and Bing Ads.", pricePerUnit: 499, unitName: "campaign", maxQuantity: 20, icon: "fas fa-ad", frequency: "monthly" },
 
             { category: "SEO", name: "SEO Audit", description: "Perform a comprehensive SEO audit to identify issues and opportunities for improvement. (One-time payment)", pricePerUnit: 299, unitName: "audit", maxQuantity: 100, icon: "fas fa-chart-line", frequency: "one-time" },
-            { category: "SEO", name: "SEO Press Release", description: "Write and distribute SEO-optimized press releases to improve your online visibility. (One-time payment)", pricePerUnit: 500, unitName: "release", maxQuantity: 20, icon: "fas fa-newspaper", frequency: "one-time" },
+            { category: "SEO", name: "SEO Press Release", description: "Write and distribute SEO-optimized press releases to improve your online visibility. (One-time payment)", pricePerUnit: 499, unitName: "release", maxQuantity: 20, icon: "fas fa-newspaper", frequency: "one-time" },
             { category: "SEO", name: "Local SEO", description: "Optimize your website and online presence for local search to attract local customers. (Monthly subscription)", pricePerUnit: 299, unitName: "website", maxQuantity: 100, icon: "fas fa-map-marker-alt", frequency: "monthly" },
             { category: "SEO", name: "Technical SEO", description: "Improve your website's technical SEO to ensure it meets search engine requirements. (One-time payment)", pricePerUnit: 399, unitName: "website", maxQuantity: 100, icon: "fas fa-tools", frequency: "one-time" },
             { category: "SEO", name: "On-page SEO", description: "Optimize your website's on-page elements, including content, meta tags, and images. (One-time payment)", pricePerUnit: 199, unitName: "page", maxQuantity: 100, icon: "fas fa-file-alt", frequency: "one-time" },
@@ -477,8 +477,6 @@
             { category: "Support", name: "IT Support", description: "Provide IT support and troubleshooting services for your business.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-headset", frequency: "hourly" },
             { category: "Support", name: "Maintenance", description: "Provide regular maintenance and updates for your server or website.", pricePerUnit: 499, unitName: "month", maxQuantity: 20, icon: "fas fa-tools", frequency: "monthly" },
             { category: "Support", name: "Mentorship", description: "One-on-one Zoom mentorship conference call with optional shared screen.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-user-graduate", frequency: "one-time" },
-
-            { category: "Google", name: "Google My Business Optimization", description: "Optimize your Google My Business listing to improve local SEO. (One-time payment)", pricePerUnit: 199, unitName: "listing", maxQuantity: 100, icon: "fab fa-google", frequency: "one-time" },
         ];
 
         const portfolioItems = [
@@ -516,7 +514,6 @@
                     <h2>${service.name}</h2>
                     <p>${service.description}</p>
                     <p class="price">$${service.pricePerUnit} per ${service.unitName}</p>
-                    <p class="frequency">${service.frequency === 'one-time' ? 'One-time payment' : `${capitalizeFirstLetter(service.frequency)} subscription`}</p>
                     <select class="quantity-select" data-service="${service.name}">
                         ${[...Array(service.maxQuantity).keys()].map(i => `<option value="${i + 1}">${i + 1} ${service.unitName} x $${service.pricePerUnit} = $${(i + 1) * service.pricePerUnit}</option>`).join('')}
                     </select>
