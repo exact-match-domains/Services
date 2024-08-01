@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Services | Your One-Stop Solution for Digital Needs</title>
+    <meta name="description"
+        content="Explore a wide range of digital services including design, development, marketing, SEO, content creation, video production, social media management, IT support, and cloud solutions.">
+    <meta name="keywords"
+        content="digital services, design, development, marketing, SEO, content creation, video production, social media management, IT support, cloud solutions">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon References -->
+    <link rel="icon"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/services-icon.svg"
+        type="image/svg+xml">
+    <link rel="icon"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/services-icon.png"
+        type="image/png" sizes="32x32">
+    <link rel="icon"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/business-professional-services/services-icon.png"
+        type="image/png" sizes="16x16">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #4c8baf, #1e4a6d);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header,
+        footer {
+            background: linear-gradient(135deg, #1e4a6d, #4c8baf);
+            color: white;
+            text-align: center;
+            padding: 3em 0;
+            position: relative;
+        }
+
+        .call-to-action {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #2a6b8d, #4c8baf);
+            color: white;
+            padding: 1em 1.5em;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .call-to-action:hover {
+            background: linear-gradient(135deg, #3c8ec4, #6a9ccf);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            left: calc(100% - 400px);
+            background: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-height: calc(100vh - 60px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e4a6d;
+            color: #fff;
+            padding: 1em;
+            border-bottom: 1px solid #ddd;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .cart-header h2 {
+            margin: 0;
+            text-align: left;
+        }
+
+        .cart-total {
+            font-size: 1.2em;
+            margin: 0 1em;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .cart-checkout {
+            font-size: small;
+            background: linear-gradient(135deg, #2a6b8d, #4c8baf);
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: right;
+        }
+
+        .cart-checkout:hover {
+            background: linear-gradient(135deg, #3c8ec4, #6a9ccf);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-items {
+            overflow-y: auto;
+            flex-grow: 1;
+            max-height: 125px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .cart-items::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cart-items {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 0.5em;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cart-item:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.02);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .cart-item select {
+            width: 60px;
+            height: 30px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1em;
+            background: linear-gradient(135deg, #f0f0f0, #ffffff);
+            color: #333;
+            padding: 0.25em;
+            text-align-last: center;
+            text-align: center;
+        }
+
+        .cart-item select:focus {
+            outline: none;
+            border-color: #1e4a6d;
+            box-shadow: 0 0 5px rgba(30, 74, 109, 0.5);
+        }
+
+        .cart-item textarea {
+            width: 1em;
+            margin-left: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.5em;
+            font-size: 0.9em;
+            resize: none;
+        }
+
+        .cart-item span {
+            flex-grow: 1;
+            text-align: left;
+            margin: 0.5em;
+        }
+
+        .cart-item .remove {
+            cursor: pointer;
+            color: #e74c3c;
+            transition: color 0.3s ease;
+        }
+
+        .cart-item .remove:hover {
+            color: #c0392b;
+        }
+
+        .slogan {
+            font-size: 1.5em;
+            margin: 1em 0;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .filters {
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        .filter-button,
+        .search-input {
+            background: linear-gradient(135deg, #1e4a6d, #4c8baf);
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-input {
+            padding: 0.5em;
+            width: 200px;
+            text-align: center;
+        }
+
+        .filter-button:hover,
+        .search-input:hover {
+            background: linear-gradient(135deg, #2a6b8d, #5a9ccf);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 2em 0 1em;
+            font-size: 1.5em;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .services,
+        .portfolio,
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1em;
+            padding: 2em;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+
+            .services,
+            .portfolio,
+            .reviews {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .services,
+            .portfolio,
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service,
+        .portfolio-item,
+        .review-item {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1.5em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            word-wrap: break-word;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .service i,
+        .portfolio-item i,
+        .review-item i {
+            font-size: 2em;
+            color: #1e4a6d;
+            margin-bottom: 0.5em;
+        }
+
+        .service h2,
+        .portfolio-item h2,
+        .review-item h2 {
+            margin-top: 0;
+            color: #1e4a6d;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .service p,
+        .portfolio-item p,
+        .review-item p {
+            color: #666;
+        }
+
+        .service textarea {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.5em;
+            font-size: 0.9em;
+            resize: none;
+        }
+
+        .service button {
+            font-size: medium;
+            background: linear-gradient(135deg, #1e4a6d, #4c8baf);
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1em;
+        }
+
+        .service button:hover {
+            background: linear-gradient(135deg, #2a6b8d, #5a9ccf);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .service:hover,
+        .portfolio-item:hover,
+        .review-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            margin: 0.5em 0;
+        }
+
+        .frequency {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 1em;
+        }
+
+        .quantity-select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            text-align: center;
+            text-align-last: center;
+        }
+
+        .stars {
+            color: gold;
+            margin-bottom: 0.5em;
+        }
+
+        footer {
+            position: relative;
+            padding: 2em 0;
+            background: linear-gradient(135deg, #1e4a6d, #4c8baf);
+        }
+
+        .back-to-top {
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            text-decoration: underline;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            margin: 1em 0;
+        }
+
+        .hidden-form {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a class="call-to-action" href="mailto:help@BestSEOLosAngeles.com?subject=Quote">Call/Text: 310-923-5603</a>
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Cart</h2>
+                <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+                <button class="cart-checkout" id="cart-checkout">Checkout</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+        </div>
+        <h1>Digital Services</h1>
+        <div class="slogan">Your one-stop solution for all your digital service needs...</div>
+    </header>
+    <div class="filters"></div>
+    <div class="section-header">Services</div>
+    <section class="services" id="services-container">
+        <!-- Services will be generated here by JavaScript -->
+    </section>
+    <div class="section-header">Portfolio</div>
+    <section class="portfolio" id="portfolio-container">
+        <!-- Portfolio items will be generated here by JavaScript -->
+    </section>
+    <div class="section-header">Reviews</div>
+    <section class="reviews" id="reviews-container">
+        <!-- Reviews will be generated here by JavaScript -->
+    </section>
+    <footer>
+        <script>
+            document.write('&copy; ' + new Date().getFullYear() + ' Best SEO Los Angeles');
+        </script>
+        <a href="#" class="back-to-top">Back To Top</a>
+    </footer>
+    <form id="paypal-form" class="hidden-form" method="post" action="https://www.paypal.com/cgi-bin/webscr"></form>
+    <script>
+        const services = [
+            { category: "Design", name: "Design", description: "Create unique logos for your brand, including initial concepts and final designs.", pricePerUnit: 50, unitName: "hour", maxQuantity: 200, icon: "fas fa-paint-brush", frequency: "one-time" },
+
+            { category: "Development", name: "Development", description: "Build responsive and modern websites with custom features.", pricePerUnit: 100, unitName: "hour", maxQuantity: 100, icon: "fas fa-code", frequency: "one-time" },
+
+            { category: "Marketing", name: "PPC Campaign Management", description: "Manage pay-per-click advertising campaigns on platforms like Google Ads and Bing Ads.", pricePerUnit: 499, unitName: "campaign", maxQuantity: 20, icon: "fas fa-ad", frequency: "monthly" },
+
+            { category: "SEO", name: "SEO Audit", description: "Perform a comprehensive SEO audit to identify issues and opportunities for improvement. (One-time payment)", pricePerUnit: 299, unitName: "audit", maxQuantity: 100, icon: "fas fa-chart-line", frequency: "one-time" },
+            { category: "SEO", name: "SEO Press Release", description: "Write and distribute SEO-optimized press releases to improve your online visibility. (One-time payment)", pricePerUnit: 500, unitName: "release", maxQuantity: 20, icon: "fas fa-newspaper", frequency: "one-time" },
+            { category: "SEO", name: "Local SEO", description: "Optimize your website and online presence for local search to attract local customers. (Monthly subscription)", pricePerUnit: 299, unitName: "website", maxQuantity: 100, icon: "fas fa-map-marker-alt", frequency: "monthly" },
+            { category: "SEO", name: "Technical SEO", description: "Improve your website's technical SEO to ensure it meets search engine requirements. (One-time payment)", pricePerUnit: 399, unitName: "website", maxQuantity: 100, icon: "fas fa-tools", frequency: "one-time" },
+            { category: "SEO", name: "On-page SEO", description: "Optimize your website's on-page elements, including content, meta tags, and images. (One-time payment)", pricePerUnit: 199, unitName: "page", maxQuantity: 100, icon: "fas fa-file-alt", frequency: "one-time" },
+            { category: "SEO", name: "Off-page SEO", description: "Build your website's authority with off-page SEO techniques, including link building and social signals. (Monthly subscription)", pricePerUnit: 299, unitName: "campaign", maxQuantity: 100, icon: "fas fa-share-alt", frequency: "monthly" },
+
+            { category: "Video", name: "Video Production", description: "Full video production services, from concept to final cut.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-camera", frequency: "one-time" },
+
+            { category: "Social Media", name: "Social Media Management", description: "Manage your social media profiles and content, including posting and engagement.", pricePerUnit: 499, unitName: "month", maxQuantity: 20, icon: "fas fa-share-alt", frequency: "monthly" },
+
+            { category: "Support", name: "IT Support", description: "Provide IT support and troubleshooting services for your business.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-headset", frequency: "hourly" },
+            { category: "Support", name: "Maintenance", description: "Provide regular maintenance and updates for your server or website.", pricePerUnit: 499, unitName: "month", maxQuantity: 20, icon: "fas fa-tools", frequency: "monthly" },
+            { category: "Support", name: "Mentorship", description: "One-on-one Zoom mentorship conference call with optional shared screen.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-user-graduate", frequency: "one-time" },
+
+            { category: "Google", name: "Google My Business Optimization", description: "Optimize your Google My Business listing to improve local SEO. (One-time payment)", pricePerUnit: 199, unitName: "listing", maxQuantity: 100, icon: "fab fa-google", frequency: "one-time" },
+        ];
+
+        const portfolioItems = [
+            { name: "MarriottRegistry.com", url: "http://marriottregistry.com", description: "Intuitive and user-friendly registry platform for Marriott." },
+            { name: "Snipeable.com", url: "http://snipeable.com", description: "App and website development for a competitive bidding platform." },
+            { name: "MonetColoredDiamonds.com", url: "http://monetcoloreddiamonds.com", description: "Rescued website owner from an off-shore developer who locked the website." },
+            { name: "WordPressLocalhost.com", url: "http://wordpresslocalhost.com", description: "Streamlined platform for local WordPress development." },
+            { name: "CLRelister.com", url: "http://clrelister.com", description: "App development and site optimization for better SEO and user engagement." },
+            { name: "PasadenaPaint.com", url: "http://pasadenapaint.com", description: "Website facelift and SEO improvement." },
+            { name: "UPnPPortMapper.com", url: "http://upnpportmapper.com", description: "App development and search engine traffic boost with targeted SEO strategies." },
+            { name: "ESGConsultingFirm.com", url: "http://esgconsultingfirm.com", description: "Search engine optimization and custom SEO strategy tailored for this website." }
+        ];
+
+        const reviews = [
+            { domain: "MarriottRegistry.com", review: "Amazing user-friendly registry platform. Highly recommended!" },
+            { domain: "Snipeable.com", review: "Outstanding app and website development. Improved site visibility and performance significantly." },
+            { domain: "MonetColoredDiamonds.com", review: "Rescued our website from an off-shore developer. Couldn't be happier with the service!" },
+            { domain: "WordPressLocalhost.com", review: "Excellent platform for local WordPress development. The team was professional and highly responsive." },
+            { domain: "CLRelister.com", review: "Great app development and SEO optimization. User engagement improved drastically." },
+            { domain: "PasadenaPaint.com", review: "Website facelift was exactly what we needed. SEO improvements are already showing results." },
+            { domain: "UPnPPortMapper.com", review: "App development was smooth and search engine traffic increased significantly." },
+            { domain: "ESGConsultingFirm.com", review: "Custom SEO strategy worked wonders for our site. Highly recommend their services." }
+        ];
+
+        function generateServiceItems(filteredServices = services) {
+            const container = document.getElementById('services-container');
+            container.innerHTML = '';
+            filteredServices.forEach(service => {
+                const serviceElement = document.createElement('div');
+                serviceElement.classList.add('service');
+                serviceElement.setAttribute('data-category', service.category);
+                serviceElement.setAttribute('id', service.name.replace(/\s+/g, '-').toLowerCase());
+                serviceElement.innerHTML = `
+                    <i class="${service.icon}"></i>
+                    <h2>${service.name}</h2>
+                    <p>${service.description}</p>
+                    <p class="price">$${service.pricePerUnit} per ${service.unitName}</p>
+                    <p class="frequency">${service.frequency === 'one-time' ? 'One-time payment' : `${capitalizeFirstLetter(service.frequency)} subscription`}</p>
+                    <select class="quantity-select" data-service="${service.name}">
+                        ${[...Array(service.maxQuantity).keys()].map(i => `<option value="${i + 1}">${i + 1} ${service.unitName} x $${service.pricePerUnit} = $${(i + 1) * service.pricePerUnit}</option>`).join('')}
+                    </select>
+                    <textarea class="notes" placeholder="Add notes, domain(s), keywords, etc... (optional)" data-service="${service.name}"></textarea>
+                    <button onclick="${service.frequency === 'one-time' ? `addToCart('${service.name}', ${service.pricePerUnit})` : `subscribeNow('${service.name}', ${service.pricePerUnit}, '${service.frequency}')`}">${service.frequency === 'one-time' ? 'Add to Cart' : 'Subscribe Now'}</button>
+                `;
+                container.appendChild(serviceElement);
+            });
+        }
+
+        function generateFilterButtons() {
+            const container = document.querySelector('.filters');
+            const categories = [...new Set(services.map(service => service.category))];
+
+            // Sort categories in descending alphabetical order
+            categories.sort((a, b) => b.localeCompare(a));
+
+            container.innerHTML = `
+                <input type="search" class="search-input" id="search-input" placeholder="Search services">
+            `;
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.classList.add('filter-button');
+                button.dataset.category = category;
+                button.textContent = category;
+                container.prepend(button);
+            });
+            const allButton = document.createElement('button');
+            allButton.classList.add('filter-button');
+            allButton.dataset.category = 'All';
+            allButton.textContent = 'All';
+            container.prepend(allButton);
+        }
+
+        async function generatePortfolioItems() {
+            const container = document.getElementById('portfolio-container');
+            container.innerHTML = '';
+            for (const item of portfolioItems) {
+                const portfolioElement = document.createElement('a');
+                portfolioElement.classList.add('portfolio-item');
+                portfolioElement.setAttribute('href', item.url);
+                portfolioElement.setAttribute('target', '_blank');
+                const screenshotUrl = await fetchScreenshotUrl(item.url);
+                portfolioElement.innerHTML = `
+                    <h2>${item.name}</h2>
+                    <img src="${screenshotUrl}" alt="${item.name} screenshot">
+                    <p>${item.description}</p>
+                `;
+                container.appendChild(portfolioElement);
+            }
+        }
+
+        async function fetchScreenshotUrl(url) {
+            const response = await fetch(`https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false`);
+            const data = await response.json();
+            return data.data.screenshot.url;
+        }
+
+        function generateReviews() {
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '';
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('a');
+                reviewElement.classList.add('review-item');
+                reviewElement.setAttribute('href', `https://${review.domain}`);
+                reviewElement.setAttribute('target', '_blank');
+                reviewElement.innerHTML = `
+                    <h2>${review.domain}</h2>
+                    <div class="stars">
+                        ${[...Array(5)].map(() => '<i class="fas fa-star"></i>').join('')}
+                    </div>
+                    <p>${review.review}</p>
+                `;
+                container.appendChild(reviewElement);
+            });
+        }
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function loadCartFromCookies() {
+            const cartCookie = document.cookie.split('; ').find(row => row.startsWith('cart='));
+            return cartCookie ? JSON.parse(decodeURIComponent(cartCookie.split('=')[1])) : [];
+        }
+
+        function saveCartToCookies(cart) {
+            document.cookie = `cart=${encodeURIComponent(JSON.stringify(cart))}; path=/; max-age=${60 * 60 * 24}; SameSite=Lax`;
+        }
+
+        function updateCart() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <select onchange="updateQuantity('${item.name}', this.value)">
+                        ${[...Array(item.maxQuantity).keys()].map(i => `<option value="${i + 1}" ${item.quantity === i + 1 ? 'selected' : ''}>${i + 1}</option>`).join('')}
+                    </select>
+                    <span>${item.name} - $${(item.price * item.quantity).toFixed(2)}</span>
+                    <i class="fas fa-trash remove" onclick="removeFromCart('${item.name}')"></i>
+                `;
+                cartContainer.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+            document.getElementById('cart-total').innerText = total.toFixed(2);
+            saveCartToCookies(cart);
+        }
+
+        function addToCart(name, price) {
+            const quantitySelect = document.querySelector(`select[data-service="${name}"]`);
+            const quantity = parseInt(quantitySelect.value);
+            const notesTextarea = document.querySelector(`textarea[data-service="${name}"]`);
+            const notes = notesTextarea.value;
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity = quantity; // Update the quantity instead of adding
+                existingItem.notes = notes;
+            } else {
+                const service = services.find(service => service.name === name);
+                cart.push({ name, price, quantity, maxQuantity: service.maxQuantity, notes });
+            }
+            updateCart();
+        }
+
+        function updateQuantity(name, quantity) {
+            const cartItem = cart.find(item => item.name === name);
+            if (cartItem) {
+                cartItem.quantity = parseInt(quantity);
+                updateCart();
+            }
+        }
+
+        function updateNotes(name, notes) {
+            const cartItem = cart.find(item => item.name === name);
+            if (cartItem) {
+                cartItem.notes = notes;
+                updateCart();
+            }
+        }
+
+        function removeFromCart(name) {
+            const item = cart.find(item => item.name === name);
+            if (item) {
+                const confirmRemove = confirm(`Are you sure you want to remove ${item.name} from the cart?`);
+                if (confirmRemove) {
+                    const index = cart.indexOf(item);
+                    cart.splice(index, 1);
+                    updateCart();
+                }
+            }
+        }
+
+        function initializeCart() {
+            cart.forEach(item => {
+                const serviceElement = document.getElementById(item.name.replace(/\s+/g, '-').toLowerCase());
+                if (serviceElement) {
+                    const quantitySelect = serviceElement.querySelector('.quantity-select');
+                    if (quantitySelect) {
+                        quantitySelect.value = item.quantity;
+                    }
+                }
+            });
+            updateCart();
+        }
+
+        const cart = loadCartFromCookies() || [];
+
+        function subscribeNow(name, price, frequency) {
+            // Handle subscription logic here
+            const returnUrl = encodeURIComponent(window.location.href);
+            const cancelUrl = encodeURIComponent(window.location.href);
+            const quantity = parseInt(document.querySelector(`select.quantity-select[data-service="${name}"]`).value);
+            const notes = document.querySelector(`textarea.notes[data-service="${name}"]`).value;
+
+            let t3
+
+            switch (frequency) {
+                case 'daily':
+                    t3 = 'D';
+                    break;
+                case 'weekly':
+                    t3 = 'W';
+                    break;
+                case 'monthly':
+                    t3 = 'M';
+                    break;
+                case 'yearly':
+                    t3 = 'Y';
+                    break;
+            }
+
+            const payUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=pay@BestSEOLosAngeles.com&item_name=${encodeURIComponent(name)}&a3=${(price * quantity).toFixed(2)}&p3=${quantity}&t3=${t3}&src=1&sra=1&currency_code=USD&return=${returnUrl}&cancel_return=${cancelUrl}&custom=${encodeURIComponent(notes)}`;
+
+            window.location.href = payUrl;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateServiceItems();
+            generateFilterButtons();
+            generatePortfolioItems();
+            generateReviews();
+            initializeCart();
+
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredServices = services.filter(service =>
+                    service.name.toLowerCase().includes(searchTerm) ||
+                    service.description.toLowerCase().includes(searchTerm)
+                );
+                generateServiceItems(filteredServices);
+            });
+
+            document.querySelectorAll('.filter-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const category = e.target.dataset.category;
+                    const filteredServices = category === 'All' ? services : services.filter(service => service.category === category);
+                    generateServiceItems(filteredServices);
+                });
+            });
+        });
+
+        document.getElementById('cart-checkout').addEventListener('click', () => {
+            const form = document.getElementById('paypal-form');
+            form.innerHTML = `
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="upload" value="1">
+                <input type="hidden" name="business" value="paypal@BestSEOLosAngeles.com">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="${window.location.href}">
+                <input type="hidden" name="cancel_return" value="${window.location.href}">
+            `;
+
+            cart.forEach((item, index) => {
+                form.innerHTML += `
+                    <input type="hidden" name="item_name_${index + 1}" value="${item.name}">
+                    <input type="hidden" name="amount_${index + 1}" value="${item.price}">
+                    <input type="hidden" name="quantity_${index + 1}" value="${item.quantity}">
+                    <input type="hidden" name="item_notes_${index + 1}" value="${item.notes}">
+                `;
+            });
+
+            form.submit();
+        });
+    </script>
+</body>
+
+</html>
