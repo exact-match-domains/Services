@@ -457,24 +457,181 @@
     <form id="paypal-form" class="hidden-form" method="post" action="https://www.paypal.com/cgi-bin/webscr"></form>
     <script>
         const services = [
-            { category: "Design", name: "Design", description: "Create unique logos for your brand, including initial concepts and final designs.", pricePerUnit: 49, unitName: "hour", maxQuantity: 200, icon: "fas fa-paint-brush", frequency: "one-time" },
+            // Design Services
+            {
+                category: "Design",
+                name: "Brand Logo Design",
+                description: "Create unique logos for your brand, from initial concepts to final designs.",
+                pricePerUnit: 49,
+                unitName: "hour",
+                maxQuantity: 200,
+                icon: "fas fa-paint-brush",
+                frequency: "one-time"
+            },
 
-            { category: "Development", name: "Development", description: "Build responsive and modern websites with custom features.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-code", frequency: "one-time" },
+            // Development Services
+            {
+                category: "Development",
+                name: "Website Development",
+                description: "Build responsive and modern websites with custom features tailored to your needs.",
+                pricePerUnit: 99,
+                unitName: "hour",
+                maxQuantity: 100,
+                icon: "fas fa-code",
+                frequency: "one-time"
+            },
 
-            { category: "Marketing", name: "PPC Campaign Management", description: "Manage pay-per-click advertising campaigns on platforms like Google Ads and Bing Ads.", pricePerUnit: 499, unitName: "campaign", maxQuantity: 20, icon: "fas fa-ad", frequency: "monthly" },
+            // Marketing Services
+            {
+                category: "Marketing",
+                name: "PPC Campaign Management",
+                description: "Manage pay-per-click advertising campaigns on platforms like Google and Bing Ads.",
+                pricePerUnit: 499,
+                unitName: "campaign",
+                maxQuantity: 20,
+                icon: "fas fa-bullhorn",
+                frequency: "monthly"
+            },
 
-            { category: "SEO", name: "SEO Press Release", description: "Write and distribute SEO-optimized press releases to improve your online visibility.", pricePerUnit: 499, unitName: "release", maxQuantity: 20, icon: "fas fa-newspaper", frequency: "one-time" },
-            { category: "SEO", name: "Local SEO", description: "Optimize your website and online presence for local search to attract local customers.", pricePerUnit: 299, unitName: "website", maxQuantity: 100, icon: "fas fa-map-marker-alt", frequency: "monthly" },
-            { category: "SEO", name: "On-page SEO", description: "Optimize your website's on-page elements, including content, meta tags, and images.", pricePerUnit: 199, unitName: "page", maxQuantity: 100, icon: "fas fa-file-alt", frequency: "one-time" },
-            { category: "SEO", name: "Off-page SEO", description: "Build your website's authority with off-page SEO techniques, including link building and social signals.", pricePerUnit: 299, unitName: "campaign", maxQuantity: 100, icon: "fas fa-share-alt", frequency: "monthly" },
+            // On-page SEO Services
+            {
+                category: "On-page SEO",
+                name: "On-page SEO Optimization",
+                description: "Optimize your website's on-page elements, including content, meta tags, and images.",
+                pricePerUnit: 99,
+                unitName: "webpage",
+                maxQuantity: 100,
+                icon: "fas fa-search",
+                frequency: "one-time"
+            },
+            {
+                category: "On-page SEO",
+                name: "SEO Strategy Development",
+                description: "Develop a custom tailored SEO strategy with targeted keywords for your website.",
+                pricePerUnit: 99,
+                unitName: "strategy",
+                maxQuantity: 100,
+                icon: "fas fa-lightbulb",
+                frequency: "one-time"
+            },
+            {
+                category: "On-page SEO",
+                name: "SEO Sitemap Creation",
+                description: "Create or update your website's sitemap and submit it to search engines for better indexing.",
+                pricePerUnit: 99,
+                unitName: "website",
+                maxQuantity: 100,
+                icon: "fas fa-sitemap",
+                frequency: "one-time"
+            },
 
-            { category: "Video", name: "Video Production", description: "Full video production services, from concept to final cut.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-camera", frequency: "one-time" },
+            // Off-page SEO Services
+            {
+                category: "Off-page SEO",
+                name: "Search Console Setup",
+                description: "Setup and configure Google Search Console or Bing Webmaster Tools for your domain.",
+                pricePerUnit: 99,
+                unitName: "domain",
+                maxQuantity: 40,
+                icon: "fas fa-toolbox",
+                frequency: "one-time"
+            },
+            {
+                category: "Off-page SEO",
+                name: "High-Authority Backlink",
+                description: "Get a high-ranking backlink placed on a related high domain authority website.",
+                pricePerUnit: 249,
+                unitName: "link",
+                maxQuantity: 40,
+                icon: "fas fa-link",
+                frequency: "one-time"
+            },
+            {
+                category: "Off-page SEO",
+                name: "SEO Article with Backlink",
+                description: "Custom targeted SEO article written and placed on a high-ranking related high domain authority website.",
+                pricePerUnit: 299,
+                unitName: "article",
+                maxQuantity: 40,
+                icon: "fas fa-file-alt",
+                frequency: "one-time"
+            },
+            {
+                category: "Off-page SEO",
+                name: "SEO Press Release",
+                description: "Write and distribute SEO-optimized press releases to improve your online visibility.",
+                pricePerUnit: 499,
+                unitName: "release",
+                maxQuantity: 20,
+                icon: "fas fa-newspaper",
+                frequency: "one-time"
+            },
+            {
+                category: "Off-page SEO",
+                name: "SEO Forum Participation",
+                description: "Participate in forum discussions and post your website backlinks on related topics.",
+                pricePerUnit: 249,
+                unitName: "blast",
+                maxQuantity: 40,
+                icon: "fas fa-comments",
+                frequency: "one-time"
+            },
+            {
+                category: "Off-page SEO",
+                name: "Google My Business Optimization",
+                description: "Optimize your website and online presence for local search, including Google My Business to attract local customers.",
+                pricePerUnit: 499,
+                unitName: "business",
+                maxQuantity: 20,
+                icon: "fas fa-map-marker-alt",
+                frequency: "one-time"
+            },
 
-            { category: "Social Media", name: "Social Media Management", description: "Manage your social media profiles and content, including posting and engagement.", pricePerUnit: 499, unitName: "month", maxQuantity: 20, icon: "fas fa-share-alt", frequency: "monthly" },
+            // Video Services
+            {
+                category: "Video",
+                name: "Full Video Production",
+                description: "Complete video production services, from concept to final cut.",
+                pricePerUnit: 499,
+                unitName: "video",
+                maxQuantity: 20,
+                icon: "fas fa-video",
+                frequency: "one-time"
+            },
 
-            { category: "Support", name: "IT Support", description: "Provide IT support and troubleshooting services to you.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-headset", frequency: "hourly" },
-            { category: "Support", name: "Maintenance", description: "Provide regular maintenance and updates for your server or website.", pricePerUnit: 499, unitName: "month", maxQuantity: 20, icon: "fas fa-tools", frequency: "monthly" },
-            { category: "Support", name: "Mentorship", description: "One-on-one Zoom mentorship conference call with optional shared screen.", pricePerUnit: 99, unitName: "hour", maxQuantity: 100, icon: "fas fa-user-graduate", frequency: "one-time" },
+            // Social Media Services
+            {
+                category: "Social Media",
+                name: "Social Media Management",
+                description: "Manage your social media profiles and content, including posting and engagement.",
+                pricePerUnit: 499,
+                unitName: "account",
+                maxQuantity: 20,
+                icon: "fas fa-share-alt",
+                frequency: "monthly"
+            },
+
+            // Support Services
+            {
+                category: "Support",
+                name: "Technical Support & Training",
+                description: "Provide support, mentorship, training, and troubleshooting services.",
+                pricePerUnit: 99,
+                unitName: "hour",
+                maxQuantity: 100,
+                icon: "fas fa-headset",
+                frequency: "one-time"
+            },
+            {
+                category: "Support",
+                name: "Website & Server Maintenance",
+                description: "Provide regular maintenance and updates for your server or website.",
+                pricePerUnit: 499,
+                unitName: "server/website",
+                maxQuantity: 20,
+                icon: "fas fa-tools",
+                frequency: "monthly"
+            }
         ];
 
         const portfolioItems = [
@@ -513,7 +670,7 @@
                     <p>${service.description}</p>
                     <p class="price">$${service.pricePerUnit} per ${service.unitName}</p>
                     <select class="quantity-select" data-service="${service.name}">
-                        ${[...Array(service.maxQuantity).keys()].map(i => `<option value="${i + 1}">${i + 1} ${service.unitName} x $${service.pricePerUnit} = $${(i + 1) * service.pricePerUnit}</option>`).join('')}
+                        ${[...Array(service.maxQuantity).keys()].map(i => `<option value="${i + 1}">${i + 1} ${service.unitName} x $${service.pricePerUnit} = $${(i + 1) * service.pricePerUnit} ${service.frequency}</option>`).join('')}
                     </select>
                     <textarea class="notes" placeholder="Add notes, domain(s), keywords, etc... (optional)" data-service="${service.name}"></textarea>
                     <button onclick="${service.frequency === 'one-time' ? `addToCart('${service.name}', ${service.pricePerUnit})` : `subscribeNow('${service.name}', ${service.pricePerUnit}, '${service.frequency}')`}">${service.frequency === 'one-time' ? 'Add to Cart' : 'Subscribe Now'}</button>
@@ -706,7 +863,7 @@
                     break;
             }
 
-            const payUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=pay@BestSEOLosAngeles.com&item_name=${encodeURIComponent(name)}&a3=${(price * quantity).toFixed(2)}&p3=${quantity}&t3=${t3}&src=1&sra=1&currency_code=USD&return=${returnUrl}&cancel_return=${cancelUrl}&custom=${encodeURIComponent(notes)}`;
+            const payUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=pay@BestSEOLosAngeles.com&item_name=${encodeURIComponent(name)}&a3=${(price * quantity).toFixed(2)}&p3=1&t3=${t3}&src=1&sra=1&currency_code=USD&return=${returnUrl}&cancel_return=${cancelUrl}&custom=${encodeURIComponent(notes)}`;
 
             window.location.href = payUrl;
         }
