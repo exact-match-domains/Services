@@ -715,7 +715,7 @@
                 portfolioElement.setAttribute('target', '_blank');
                 const screenshotUrl = await fetchScreenshotUrl(item.url);
                 portfolioElement.innerHTML = `
-                    <h2>${item.name}</h2>
+                    <img src="${screenshotUrl}" alt="${item.name} screenshot">
                     <p>${item.description}</p>
                 `;
                 container.appendChild(portfolioElement);
