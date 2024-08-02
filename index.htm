@@ -902,6 +902,9 @@
         });
 
         document.getElementById('cart-checkout').addEventListener('click', () => {
+            if (cart.length < 1)
+                return alert('Cart empty!');
+
             const form = document.getElementById('paypal-form');
             form.innerHTML = `
                 <input type="hidden" name="cmd" value="_cart">
