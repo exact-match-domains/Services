@@ -318,6 +318,7 @@
             color: #1e4a6d;
             overflow: hidden;
             text-overflow: ellipsis;
+            word-wrap: break-word;
         }
 
         .service p,
@@ -715,6 +716,7 @@
                 portfolioElement.setAttribute('target', '_blank');
                 const screenshotUrl = await fetchScreenshotUrl(item.url);
                 portfolioElement.innerHTML = `
+                    <h2>${item.name}</h2>
                     <img src="${screenshotUrl}" alt="${item.name} screenshot">
                     <p>${item.description}</p>
                 `;
