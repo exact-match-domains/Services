@@ -942,6 +942,20 @@
             window.location.href = `https://venmo.com/meftekhari143?txn=pay&amount=${encodeURIComponent(amount.toFixed(2))}&note=${encodeURIComponent(notes)}`;
         }
 
+        function cashAppCheckout() {
+            if (cart.length < 1) return alert('Cart empty!');
+
+            let notes = `Payment for services from ${window.location.href}: `;
+            let amount = 0;
+
+            cart.forEach((item, index) => {
+                amount += Number(item.price) * Number(item.quantity);
+                notes += `${index + 1}. ${item.name} - ${item.quantity} x $${item.price} ${item.notes ? '(' + item.notes + ')' : ''} `;
+            });
+
+            window.location.href = `https://cash.app/$mohammad143/${amount.toFixed(2)}?note=${encodeURIComponent(notes)}`;
+        }
+
         document.getElementById('cart-checkout').addEventListener('click', () => venmoCheckout());
     </script>
 </body>
